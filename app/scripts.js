@@ -21,10 +21,19 @@ const Storage = {
   },
 };
 
+const AudioFile = {
+    audio: new Audio('assets/cash-register.mp3'),
+  
+    play() {
+      AudioFile.audio.play();
+    },
+};
+
 const Transaction = {
   all: Storage.get(),
 
   add(transaction) {
+      AudioFile.play();
       Transaction.all.push(transaction);
       App.reload();
   },
