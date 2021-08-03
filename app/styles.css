@@ -2,13 +2,11 @@
 :root {
   --bg-main: #F0F2F5;
   --bg-header: #4CA145;
-  --bg-header-bkup: #52225e;
   --dark-blue: #363f5f;
   --light-gray: #969CB3;
   --income-green: #12a454;
   --light-green: #3dd705;
   --green: #72C845;
-  --green-bkup: #2696aa;
   --red: #e92929;
 
 }
@@ -41,7 +39,7 @@ body {
 }
 
 .container {
-  width: min(90vw, 800px);
+  width: min(90vw, 1100px);
   margin: auto;
 }
 
@@ -88,8 +86,7 @@ button:hover {
 }
 
 .button.new {
-  display: inline-block;
-  margin-bottom: .8rem;
+  display: none;
 }
 
 .button.cancel {
@@ -114,7 +111,30 @@ button:hover {
 header {
   background: var(--bg-header);
   padding: 2rem 0 10rem;
-  text-align: center;
+}
+
+header div {
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header div img {
+  width: 7rem;
+}
+
+header div a {
+  color: white;
+  background: #68BA61;
+  padding: 0.8rem 1rem;
+  border-radius: 5px;
+}
+
+header div a:hover {
+  color: white;
+  background: #54CF4A;
+  
 }
 
 /* ========== Balance ========== */
@@ -298,6 +318,25 @@ footer {
 @media (min-width: 800px) {
   html {
       font-size: 87.5%; /* 14px */
+  }
+
+  header div {
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0;
+  }
+
+  header div img {
+    width: 10rem;
+  }
+
+  header div a {
+    display: none;
+  }
+
+  .button.new {
+    display: inline-block;
+    margin-bottom: .8rem;
   }
 
   #balance {
