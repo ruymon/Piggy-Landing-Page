@@ -302,6 +302,11 @@ td.expense {
   width: 48%;
 }
 
+.negativeMobile {
+  font-weight: bold;
+  cursor: pointer;
+}
+
 
 
 /* ========== Footer ========== */
