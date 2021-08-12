@@ -108,9 +108,8 @@
 
                     <div class="input-group">
                         <label class="sr-only" for="amount">Valor</label>
-                        <!-- TODO - Fix Number Type on Mobile -->
                         <input type="number" step="0.01" id="amount" pattern="[0-9\-]+" name="amount" placeholder="0,00"/>
-                        <small class="help">Use o sinal - <span class="negativeMobile" onclick="teste();">(negativo)</span> para despesas e , (virgula) para casas decimais</small>
+                        <small class="help">Use o sinal - <span class="negativeMobile" onclick="androidMobileNegative();">(negativo)</span> para despesas e , (virgula) para casas decimais</small>
                     </div>
 
                     <div class="input-group">
@@ -137,16 +136,12 @@
     <script src="./scripts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
-    <!-- Mobile Negative Input Workaround -->
     <script>
 
-        function teste() {
+        function androidMobileNegative() {
             document.getElementById('amount').value = "-0.00";
         }
     </script>
-
-    <!-- ISSO É PURA GAMBIARRA! NÃO MEXA, PODE NUNCA MAIS FUNCIONAR hehe -->
-
 </body>
 
 </html>
