@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.:: Piggy | App ::.</title>
+
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- SEO - Optimization -->
+    <meta name="title" content="Piggy | App">
+    <meta name="description" content="Piggy - Seu porquinho digital! Um App que te ajuda a organizar suas finanças de uma forma simples.">
+    <meta name="keywords" content="piggy, Piggy, financas, hubs, marista, porquinho digital, finance, pig, mobile, piggy seu porquinho digital">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="Portuguese">
+    <meta name="revisit-after" content="5 days">
+    <meta name="author" content="Ruy Monteiro">
+
+    <link rel="icon" href="../public/images/favicon.png" />
+
+    <!-- TODO - Add Google Analytics-->
+</head>
+
+<body>
+
+    <header>
+        <div>
+            <img src="./assets/logo.svg" alt="Logo Piggy">
+            <a onclick="modal.open();">New entry</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="balance">
+            <h2 class="sr-only">Balance</h2>
+
+            <div class="card">
+                <h3>
+                    <span>
+                        Incomes
+                    </span>
+                    <img src="./assets/income.svg" alt="Imagem de entradas">
+                </h3>
+                <p id="incomeDisplay">R$ 0,00</p>
+            </div>
+
+            <div class="card">
+                <h3>
+                    <span>
+                        Expenses
+                    </span>
+                    <img src="./assets/expense.svg" alt="Imagem de Saídas">
+                </h3>
+                <p id="expenseDisplay">R$ 0,00</p>
+            </div>
+
+            <div class="card total">
+                <h3>
+                    <span>
+                        Total
+                    </span>
+                    <img src="./assets/total.svg" alt="Imagem de Total">
+                </h3>
+                <p id="totalDisplay">R$ 0,00</p>
+            </div>
+
+        </section>
+
+        <section id="transaction">
+            <h2 class="sr-only">Transactions</h2>
+
+            <a onclick="modal.open();" class="button new">
+                + New Transaction
+            </a>
+
+            <table id="data-table">
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+
+        </section>
+
+    </main>
+
+    <div class="modal-overlay">
+        <div class="modal">
+            <div id="form">
+                <h2>New Transaction</h2>
+
+                <form action="" onsubmit="Form.submit(event);"> 
+                    <div class="input-group">
+                        <label class="sr-only" for="description">Description</label>
+                        <input type="text" id="description" name="description" placeholder="Description"/>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="sr-only" for="amount">Valor</label>
+                        <input type="number" step="0.01" id="amount" pattern="[0-9\-]+" name="amount" placeholder="0,00"/>
+                        <small class="help">Use the - sign <span class="negativeMobile" onclick="androidMobileNegative();">(negative)</span> for expenses and, (comma) for decimal cases.</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="sr-only" for="date">Date</label>
+                        <input type="date" id="date" name="date" />
+                    </div>
+
+                    <div class="input-group actions">
+                        <a onclick="modal.close();" class="button cancel">Cancel</a>
+                        <button>Save</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>    
+
+    <footer>
+        <p>Piggy - Your digital piggy bank</p>
+        <p>v1.8</p>
+    </footer>
+
+
+    <script src="./scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <script>
+
+        function androidMobileNegative() {
+            document.getElementById('amount').value = "-0.00";
+        }
+    </script>
+</body>
+
+</html>

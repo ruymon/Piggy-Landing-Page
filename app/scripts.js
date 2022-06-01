@@ -40,7 +40,7 @@ const Transaction = {
 
   remove(index) {
     Transaction.all.splice(index, 1);
-    Utility.successAlert('Transação excluída com sucesso!');
+    Utility.successAlert('Entry removed successfully. | Transação excluída com sucesso!');
     App.reload();
   },
 

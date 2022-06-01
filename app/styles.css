@@ -8,6 +8,7 @@
   --light-green: #3dd705;
   --green: #72C845;
   --red: #e92929;
+  --card-background: #fff;
 
 }
 
@@ -24,6 +25,21 @@ html {
 body {
   background: var(--bg-main);
   font-family: 'Poppins', sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-main: #282828;
+    --bg-header: #212121;
+    --dark-blue: #fff;
+    --light-gray: #fff;
+    --income-green: #12a454;
+    --light-green: #3dd705;
+    --green: #72C845;
+    --red: #e92929;
+    --card-background: #202020;
+  
+  }
 }
 
 .sr-only {
@@ -149,7 +165,7 @@ header div a:hover {
 
 /* ========== Cards ========== */
 .card {
-  background: #fff;
+  background: var(--card-background);
   padding: 1.5rem 2rem;
   border-radius: 0.25rem;
 
@@ -204,7 +220,7 @@ table tbody tr td:last-child {
 }
 
 table th {
-  background: #fff;
+  background: var(--card-background);
   font-weight: normal;
   padding: 1rem 2rem;
   text-align: left;
@@ -219,7 +235,7 @@ table tbody tr:hover {
 }
 
 table tbody td{
-  background: white;
+  background: var(--card-background);
   padding: 1rem 2rem;
 }
 
@@ -300,6 +316,10 @@ td.expense {
 .input-group.actions .button,
 .input-group.actions button{
   width: 48%;
+}
+
+.help {
+  color: var(--dark-blue);
 }
 
 .negativeMobile {

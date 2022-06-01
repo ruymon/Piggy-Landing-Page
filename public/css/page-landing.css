@@ -123,6 +123,11 @@ main h1 {
     width: 100%;
 
   }
+
+  .buttons a:last-child {
+    margin-left: 1rem;
+  }
+  
   
   .visit p {
     font-size: 2.4rem;
